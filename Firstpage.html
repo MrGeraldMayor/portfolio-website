@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="/path/to/your-project/css/all.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=wifi" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=clear_day" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Mr Gerald Mayor</title>
+    <style>
+        :root{
+            --bg: #ffffff;
+            --text: #000000;
+        }
+        body.dark{
+            --bg: #000000;
+            --text: #ffffff;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+        }
+        body{
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+        }
+        
+header{
+  display: none;
+}
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo a{
+            text-decoration: none;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo span{
+            color: var(--bg);
+            background-color: var(--text);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo h3{
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0;
+        }
+        .links{
+            display: flex;
+            gap: 30px;
+            align-items: center; /* keep items vertically centered */
+            flex-wrap: nowrap; /* prevent wrapping to next line */
+        }
+        .links li{
+            list-style: none;
+            display: inline-flex; /* ensure each item stays inline */
+            align-items: center;
+        }
+        .links li a{
+            text-decoration: none;
+            color: var(--text);
+            display: inline-block;
+        }
+        .links button{
+        background-color: var(--text);
+        color: var(--bg);
+        padding: 10px 10px;
+        border: none;
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 600;
+        transition: background 0.3s, color 0.3s;
+        }
+        .links button i{
+            font-size: 13px;
+        }
+        .toggle{
+            display: flex;
+            gap: 10px;
+        }
+        .toggle button{
+            background-color: var(--text);
+            color: var(--bg);
+            padding: 20px;
+            height: 20px;
+            width: 30px;
+            display: flex;
+            justify-content: center;
+            border-radius: 50%;
+            align-items: center;
+            cursor: pointer;
+            outline: none;
+        }
+        .section-one{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            height: 100vh;
+        }
+        .section-one .txt{
+            flex: 1;
+            padding-left: 100px;
+        }
+        .section-one .txt h1{
+            font-size: 90px;
+            font-weight: 600;   
+        }
+        .section-one .txt p{
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .section-one .txt button{
+            margin-top: 20px;
+            background-color: var(--text);
+            color: var(--bg);
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .section-one .image{
+            padding-right: 100px;
+        }
+        .section-one .image img{
+            width: 300px;
+            height: 300px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+        .contact-button{
+        	 display: inline-flex;
+        	 gap: 6px;
+        	 align-items: center;
+        }
+        .tap{
+            display: inline-flex;
+        	 gap: 6px;
+        	 align-items: center;
+             margin-left: 20px;
+             animation: blink 3s infinite;
+             transition: all 0.6s ease-in-out;
+        }
+        @keyframes blink {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+        }
+
+
+
+
+        #about{
+            padding-left: 20px;
+        }
+        #about h1{
+            text-align: center;
+        }
+        .popup{
+            background-color: blue;
+            color: var(--bg);
+            padding: 20px;
+            border-radius: 5px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+
+
+
+
+    #projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-top: 20px;
+}
+ 
+
+
+.card-one, .card-two, .card-three , .card-four {
+  background-color: var(--bg);
+  padding: 20px;
+  border: 1px solid var(--text);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-one h1, .card-two h1, .card-three h1, .card-four h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-one p, .card-two p, .card-three p,.card-four p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.card-one a, .card-two a, .card-three a, .card-four a {
+  text-decoration: none;
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  background-color: var(--text);
+  color: var(--bg);
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.card-one a:hover, .card-two a:hover, .card-three a:hover, .card-three a:hover {
+  background-color: #333;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 5px;
+  background-color: var(--text);
+  transition: width 1s ease-in-out;
+  z-index: 1000;
+}
+
+.loader.loaded {
+  width: 100%;
+}
+
+
+footer {
+  background-color: var(--text);
+  color: var(--bg);
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.social-links {
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  font-size: 24px;
+  color: var(--bg);
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ccc;
+}
+
+footer p {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+
+.wifi-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  transform: translateX(100%);
+}
+
+.wifi-notification.show {
+  animation: slideIn 0.5s forwards;
+}
+
+.wifi-notification.hide {
+  animation: slideOut 0.5s forwards;
+}
+
+.wifi-notification.online {
+  background-color: #34C759; /* Green color */
+  color: #fff;
+}
+
+.wifi-notification.offline {
+  background-color: #FF3B3F; /* Red color */
+  color: #fff;
+}
+
+.wifi-notification i {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.nav-bars{
+  display: none;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+
+@media (max-width: 768px) {
+  header{
+    display: block;
+  }
+  nav{
+    display: none;
+  }
+  .logo{
+    display: none;
+  }
+  .nav-bars{
+    display: block;
+  }
+  .links{
+    display: flex;
+    flex-direction: column;
+  }
+  .toggle{
+    display: none;
+  }
+  .section-one .txt h1 {
+    font-size: 40px;
+  }
+  .section-one .txt p {
+    font-size: 14px;
+  }
+  .section-one .txt {
+    padding-left: 20px;
+  }
+  .section-one .image {
+    display: none;
+  }
+  .section-one .txt button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  nav {
+    display: none;
+  }
+  .section-one .txt h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .section-one .txt p {
+    font-size: 12px;
+  }
+  .section-one .txt {
+    padding-left: 10px;
+  }
+  .section-one .image {
+    display: none;
+  }
+  .section-one .txt button {
+    padding: 6px 10px;
+    font-size: 12px;
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 1rem;
+}
+
+.nav-links li {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-links li a:hover{
+    background-color: #ccc;
+  color: #333;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-links.show {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    background-color: transparent;
+    padding: 0;
+  }
+  .nav-links li {
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+}
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="loader"></div>
+    <nav>
+              <div class="nav-bars">
+        <i class="fa-solid fa-bars" id="nav"></i>
+        </div>
+        <div class="logo">
+            <a href="Firstpage.html">
+                <span>G</span>
+                <h3>Gerald</h3>
+            </a>
+        </div>
+        <div class="links">
+            <li><a href="Firstpage.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="#projects">projects</a></li>
+            <li><button onclick="cont()"><i class="fa-solid fa-phone"></i>contact</button></li>
+        </div>
+
+
+          <div class="wifi-notification offline" id="wifi-notification">
+            <i class="fa fa-wifi"></i>
+            <span>You are offline</span>
+          </div>
+
+        <div class="toggle">
+            <button id="toggle"> <i class="fa-solid fa-moon"></i></button>
+        </div>
+    </nav>
+
+<header>
+    <nav class="nav">
+      <div class="nav-logo">Gerald</div>
+      <div class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+
+
+    <div class="section-one">
+        <div class="txt">
+            <h1>Gerald Mayor</h1>
+            <p>I am a passionate Frontend Web Developer with expertise in crafting visually appealing and user-friendly web applications. I specialize in HTML, CSS, JavaScript, and modern frameworks like React. I love solving problems and creating seamless digital experiences. Let's build something amazing together!</p>
+            <button class="contact-button" id="contact-button"><i class="fa-solid fa-phone"></i>Contact me</button>
+            <button class="tap" id="tap"  onclick="tap()">Tap to view project<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+        <div class="image">
+            <img src="ChatGPT Image Oct 7, 2025, 05_52_57 PM.png" alt="">
+        </div>
+    </div>
+
+ 
+
+
+    <div id="about">
+        <h1 class="second">About</h1>
+        <div class="first-about">
+            <p>Hi, I'm Gerald Mayor, a passionate and detail-oriented frontend web developer with a knack for crafting visually stunning and user-friendly web applications. With [Number] years of experience in the industry, I've honed my skills in HTML, CSS, JavaScript, and various frontend frameworks. I'm dedicated to delivering high-quality solutions that exceed client expectations and provide seamless user experiences</p>
+        </div>
+        
+    </div>
+
+    <h1 style="text-align: center;margin-top: 80px;">Projects</h1>
+        <div id="projects">
+            <div class="card-one">
+                <h1>Native-Cal(Desktop)</h1>
+                <p>A basic calculator that performs arithmetic operations such as addition, subtraction, multiplication, and division. Users can input numbers and select an operation to get the result. It's a straightforward tool for quick calculations.</p>
+                <a href="https://drive.google.com/file/d/1SDMcW5JWe7jtTYtiUei2yJ80JKZ9WYkh/view?usp=drive_link"><i class="fa-solid fa-download"></i>Download</a>
+            </div>
+            <div class="card-two">
+                <h1>prime nest website</h1>
+                <p>An online store where customers can browse and purchase products or services, featuring product catalogs, shopping carts, payment gateways, and order management systems. It allows businesses to sell products online, offering convenience, flexibility, and 24/7 accessibility to customers worldwide.</p>
+                <a href="https://primenest.wasmer.app">visit<i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+              <div class="card-three">
+                <h1>Plantify</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex. Dicta neque eveniet quis, quos deserunt labore, ut sapiente unde dolor possimus placeat pariatur dignissimos tempore ullam laborum culpa magnam.</p>
+                <a href="https://plant-this-three.vercel.app/"><i class="fa-solid fa-arrow-right"></i>visit</a>
+              </div>
+              <div class="card-four">
+                <h1>Native-cal(andriod)</h1>
+                  <p>A basic calculator that performs arithmetic operations such as addition, subtraction, multiplication, and division. Users can input numbers and select an operation to get the result. It's a straightforward tool for quick calculations.</p>
+                <a href=""><i class="fa-solid fa-download"></i>Download</a>
+              </div>
+        </div>
+
+
+
+
+
+
+        <footer id="target-section">
+            <h1>Contact me via</h1>
+            <div class="social-links">
+              <a href="https://wa.me/+2347049691632"><i class="fa-brands fa-whatsapp"></i></a>
+              <a href="https://web.facebook.com/profile.php?id=61577658127228"><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p> 2024 Your Name. All rights reserved.</p>
+          </footer>
+          
+
+
+    <script>
+        const btn = document.getElementById("toggle")
+        const icon = btn.querySelector('i');
+
+        btn.addEventListener("click", () =>{
+            document.body.classList.toggle('dark');
+            const isDark = document.body.classList.contains('dark');
+            if (isDark) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+            }
+        })
+
+        const button = document.getElementById('contact-button');
+        const targetSection = document.getElementById('target-section');
+
+      button.addEventListener("click", () => {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      });
+
+
+
+    function cont(){
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+
+
+    const loader = document.querySelector('.loader');
+const buttonLoader = document.getElementById('tap');
+
+buttonLoader.addEventListener('click', () => {
+    loader.style.width = '0%';
+  let width = 0;
+  const interval = setInterval(() => {
+    if (width >= 500) {
+      clearInterval(interval);
+      // Redirect to another page after loading sequence finishes
+      window.location.href = "LastPage.html"; // Replace with your desired URL
+    } else {
+      width++;
+      loader.style.width = width + '%';
+    }
+  }, 20);
+});
+
+
+
+
+const notification = document.getElementById('wifi-notification');
+const onlineIcon = '<i class="fa fa-wifi"></i> <span>You are online</span>';
+const offlineIcon = '<i class="fa fa-wifi"></i> <span>You are offline</span>';
+
+function showNotification(message, isOnline) {
+  notification.innerHTML = message;
+  notification.classList.remove('hide');
+  notification.classList.add('show');
+  if (isOnline) {
+    notification.classList.remove('offline');
+    notification.classList.add('online');
+  } else {
+    notification.classList.remove('online');
+    notification.classList.add('offline');
+  }
+  setTimeout(() => {
+    notification.classList.remove('show');
+    notification.classList.add('hide');
+    setTimeout(() => {
+      notification.classList.remove('hide');
+    }, 500); // Wait for the animation to finish
+  }, 3000); // Show the notification for 3 seconds
+}
+
+function updateNotification(online) {
+  if (online) {
+    showNotification(onlineIcon, true);
+  } else {
+    showNotification(offlineIcon, false);
+  }
+}
+
+// Update the notification based on the current online status
+updateNotification(navigator.onLine);
+
+// Add event listeners to update the notification when the online status changes
+window.addEventListener('online', () => {
+  updateNotification(true);
+});
+
+window.addEventListener('offline', () => {
+  updateNotification(false);
+});
+
+
+
+
+
+
+
+
+
+
+function updateInteractionState(online) {
+  const interactableElements = document.querySelectorAll('button, a');
+  interactableElements.forEach(element => {
+    if (element.tagName === 'A') {
+      if (online) {
+        element.style.pointerEvents = 'auto';
+        element.style.opacity = '1';
+        element.style.cursor = 'pointer';
+      } else {
+        element.style.pointerEvents = 'none';
+        element.style.opacity = '0.5';
+        element.style.cursor = 'not-allowed';
+      }
+    } else {
+      element.disabled = !online;
+      if (online) {
+        element.style.opacity = '1';
+        element.style.cursor = 'pointer';
+      } else {
+        element.style.opacity = '0.5';
+        element.style.cursor = 'not-allowed';
+      }
+    }
+  });
+}
+
+function updateNotification(online) {
+  const notification = document.getElementById('wifi-notification');
+  const onlineIcon = '<i class="fa fa-wifi"></i> <span>You are online</span>';
+  const offlineIcon = '<i class="fa fa-wifi"></i> <span>You are offline</span>';
+  
+  if (online) {
+    notification.innerHTML = onlineIcon;
+    notification.classList.remove('offline');
+    notification.classList.add('online');
+    localStorage.setItem('online', 'true');
+  } else {
+    notification.innerHTML = offlineIcon;
+    notification.classList.remove('online');
+    notification.classList.add('offline');
+    localStorage.setItem('online', 'false');
+  }
+  notification.classList.remove('hide');
+  notification.classList.add('show');
+  setTimeout(() => {
+    notification.classList.remove('show');
+    notification.classList.add('hide');
+  }, 3000);
+}
+
+window.addEventListener('online', () => {
+  updateNotification(true);
+  updateInteractionState(true);
+});
+
+window.addEventListener('offline', () => {
+  updateNotification(false);
+  updateInteractionState(false);
+});
+
+// Check the initial online status and update the interaction state accordingly
+const isOnline = localStorage.getItem('online');
+if (isOnline === 'true' && navigator.onLine) {
+  updateInteractionState(true);
+  updateNotification(true);
+} else {
+  updateInteractionState(false);
+  updateNotification(false);
+}
+
+
+
+
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+navToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+  // Animate the toggle button
+  navToggle.classList.toggle('active');
+  if (navToggle.classList.contains('active')) {
+    navToggle.children[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+    navToggle.children[1].style.opacity = '0';
+    navToggle.children[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+  } else {
+    navToggle.children[0].style.transform = '';
+    navToggle.children[1].style.opacity = '';
+    navToggle.children[2].style.transform = '';
+  }
+});
+
+
+document.addEventListener('click', (e) => {
+  if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+    navLinks.classList.remove('show');
+    navToggle.classList.remove('active');
+    navToggle.children[0].style.transform = '';
+    navToggle.children[1].style.opacity = '';
+    navToggle.children[2].style.transform = '';
+  }
+});
+
+
+
+
+    </script>
+</body>
+</html>

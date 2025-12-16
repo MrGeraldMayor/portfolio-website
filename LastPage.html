@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Projects</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .search {
+            position: relative;
+            width: min(600px, 50%);
+            margin: 30px auto 0;
+        }
+
+        .search input {
+            width: 100%;
+            height: 52px;
+            padding: 0 56px 0 16px; /* room for the button on the right */
+            border: 1px solid #e5e7eb;
+            border-radius: 9999px;
+            background: #ffffff;
+            color: #111827;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+            transition: border-color 120ms ease, box-shadow 120ms ease;
+        }
+
+        .search input::placeholder {
+            color: #9ca3af;
+        }
+
+        .search input:focus {
+            outline: none;
+            border-color: #6366f1; /* indigo-500 */
+            box-shadow: 0 0 0 4px rgba(99,102,241,0.15);
+        }
+
+        .search button {
+            position: absolute;
+            left: 105%;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 40px;
+            width: 40px;
+            border: none;
+            border-radius: 9999px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            box-shadow: 0 6px 16px rgba(99,102,241,0.35);
+            transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+        }
+
+        .search button:hover {
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 10px 22px rgba(99,102,241,0.45);
+        }
+
+        .search button:active {
+            transform: translateY(-50%) scale(0.98);
+        }
+
+        /* Small screens */
+        @media (max-width: 480px) {
+            .search input {
+                height: 48px;
+                padding-right: 52px;
+            }
+            .search button {
+                height: 36px;
+                width: 36px;
+                right: 6px;
+            }
+        }
+
+
+        .grid-proj {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-top: 80px;
+}
+
+.card-one, .card-two, .card-three, .card-four {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-one h1, .card-two h1, .card-three h1, .card-four h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-one p, .card-two p, .card-three p, .card-four p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.card-one a, .card-two a, .card-three a, .card-four a {
+  text-decoration: none;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.card-one a:hover, .card-two a:hover, .card-three a:hover, .card-four a:hover {
+  background-color: #555;
+}
+
+        
+mark {
+  background-color: yellow;
+  color: black;
+}
+
+    </style>
+</head>
+<body>
+        <div class="search">
+            <input type="text" placeholder="click s" id="myInput">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    <div class="grid-proj">
+        <div class="card-one">
+            <h1>Native-cal</h1>
+            <p>A basic calculator that performs arithmetic operations such as addition, subtraction, multiplication, and division. Users can input numbers and select an operation to get the result. It's a straightforward tool for quick calculations.</p>
+            <a href=""><i class="fa-solid fa-download"></i>Download</a>
+          </div>
+          <div class="card-two">
+            <h1>Project 2</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex. Dicta neque eveniet quis, quos deserunt labore, ut sapiente unde dolor possimus placeat pariatur dignissimos tempore ullam laborum culpa magnam.</p>
+            <a href=""><i class="fa-solid fa-download"></i>Download</a>
+          </div>
+          <div class="card-three">
+            <h1>Project 3</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex. Dicta neque eveniet quis, quos deserunt labore, ut sapiente unde dolor possimus placeat pariatur dignissimos tempore ullam laborum culpa magnam.</p>
+            <a href=""><i class="fa-solid fa-download"></i>Download</a>
+          </div>
+          <div class="card-four">
+            <h1>Project 4</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, ex. Dicta neque eveniet quis, quos deserunt labore, ut sapiente unde dolor possimus placeat pariatur dignissimos tempore ullam laborum culpa magnam.</p>
+            <a href=""><i class="fa-solid fa-download"></i>Download</a>
+          </div>
+    </div>
+    <script>
+        document.addEventListener('keydown', (e) => {
+  if ( e.key.toLowerCase() === 's') {
+    const input = document.getElementById('myInput');
+    input.focus();
+    input.click();
+  }
+});
+
+
+    </script>
+</body>
+</html>
